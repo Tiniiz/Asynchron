@@ -23,3 +23,8 @@ try:
 except ValueError:
     port = 9090
     print("Введен некорректный порт. По умолчанию - 9090.")
+
+msg = input('Введите сообщение: ')
+loop = asyncio.get_event_loop()
+loop.run_until_complete(tcp_echo_client(msg))
+loop.close()
